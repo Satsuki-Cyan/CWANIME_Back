@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cstech.cwanime.portal.dao.domain.User" >
+
+<!--分页查询-->
+<select id="queryUserByPage" parameterType="com.cstech.cwanime.portal.dao.domain.User"  resultType="com.cstech.cwanime.portal.dao.domain.User">
+
+</select>
+
+
+<!-- 插入记录 -->
+<insert id="insertUser"  parameterType="com.cstech.cwanime.portal.dao.domain.User" >
+
+</insert>
+
+
+<!-- 根据id，修改记录-->  
+<update id="updateUser"  parameterType="com.cstech.cwanime.portal.dao.domain.User" >
+
+</update>
+ 
+<!-- 查询记录 -->
+<select id="listUsers"  parameterType="com.cstech.cwanime.portal.dao.domain.User"  resultType="com.cstech.cwanime.portal.dao.domain.User">
+select
+        t.id id,
+        t.flow_no accountNo
+    from t_gfbm_otrade_fin_flow t
+</select>
+
+
+<!-- 根据id, 查询记录 -->
+<select id="getUser"  parameterType="com.cstech.cwanime.portal.dao.domain.User"  resultType="com.cstech.cwanime.portal.dao.domain.User">
+    select
+        t.id id,
+        t.flow_no accountNo
+    from t_gfbm_otrade_fin_flow t
+    <where>
+        <if test="id != null">
+            t.id = #{id}
+        </if>
+        <if test="status != null">
+            and t.status = #{status}
+        </if>
+    </where>
+
+</select>
+
+</mapper>   
