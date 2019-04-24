@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cstech.cwanime</groupId>
-	<artifactId>anime</artifactId>
+	<artifactId>CWANIME_Back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>super project</name>
+	<name>CWANIME_Back</name>
 	<description>super project</description>
 
 	<properties>

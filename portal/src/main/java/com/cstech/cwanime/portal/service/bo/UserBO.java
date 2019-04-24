@@ -1,5 +1,6 @@
 package com.cstech.cwanime.portal.service.bo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,10 +8,13 @@ import java.util.Date;
  * @author Satsuki
  * @date 2019-03-12
  */
-public class UserBO {
+public class UserBO implements Serializable {
 
 	/** id */
 	private Long id;
+
+	/** 用户uid */
+	private Integer userUid;
 
 	/** 手机号码 */
 	private String telephone;
@@ -54,6 +58,12 @@ public class UserBO {
 	/** 身份证号 */
 	private String idNo;
 
+	/** 树叶（硬币） */
+	private Integer leaf;
+
+	/** 花瓣（b币） */
+	private Integer petal;
+
 	/** 用户经验值（等级直接算出） */
 	private Integer userExp;
 
@@ -63,8 +73,8 @@ public class UserBO {
 	/** 用户性质(1:普通用户、2:管理者) */
 	private Integer role;
 
-	/** 业务状态(1:待激活、2:已激活、3:冻结、4:已注销) */
-	private Integer bizStatus;
+	/** 用户状态(1:待激活、2:已激活、3:冻结、4:已注销) */
+	private Integer userStatus;
 
 	/** 乐观锁 */
 	private Integer dataVersion;
@@ -91,6 +101,7 @@ public class UserBO {
 	private Date updateTime;
 
 	/* 附加字段 */
+
 	/** token */
 	private String token;
 
@@ -214,6 +225,30 @@ public class UserBO {
 		this.idNo = idNo;
 	}
 
+	public Integer getUserUid() {
+		return userUid;
+	}
+
+	public void setUserUid( Integer userUid ) {
+		this.userUid = userUid;
+	}
+
+	public Integer getLeaf() {
+		return leaf;
+	}
+
+	public void setLeaf( Integer leaf ) {
+		this.leaf = leaf;
+	}
+
+	public Integer getPetal() {
+		return petal;
+	}
+
+	public void setPetal( Integer petal ) {
+		this.petal = petal;
+	}
+
 	public Integer getUserExp() {
 		return userExp;
 	}
@@ -238,12 +273,12 @@ public class UserBO {
 		this.role = role;
 	}
 
-	public Integer getBizStatus() {
-		return bizStatus;
+	public Integer getUserStatus() {
+		return userStatus;
 	}
 
-	public void setBizStatus( Integer bizStatus ) {
-		this.bizStatus = bizStatus;
+	public void setUserStatus( Integer userStatus ) {
+		this.userStatus = userStatus;
 	}
 
 	public Integer getDataVersion() {
@@ -339,7 +374,7 @@ public class UserBO {
 		sb.append( ", userExp=" ).append( userExp );
 		sb.append( ", vipExp=" ).append( vipExp );
 		sb.append( ", role=" ).append( role );
-		sb.append( ", bizStatus=" ).append( bizStatus );
+		sb.append( ", userStatus=" ).append( userStatus );
 		sb.append( ", dataVersion=" ).append( dataVersion );
 		sb.append( ", status=" ).append( status );
 		sb.append( ", createBy='" ).append( createBy ).append( '\'' );

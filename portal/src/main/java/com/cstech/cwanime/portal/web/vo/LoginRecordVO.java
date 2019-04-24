@@ -13,8 +13,8 @@ public class LoginRecordVO implements Serializable {
 	/** id */
 	private Integer id;
 
-	/** 用户id */
-	private Integer userId;
+	/** 用户uid */
+	private Integer userUid;
 
 	/** 登录ip */
 	private String ip;
